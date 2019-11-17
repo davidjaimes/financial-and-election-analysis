@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import sys
 
-# Make class to make all Print function write to console and text file.
+# Make Class to Write Print Functions to Console and Text File.
 class Logger(object):
     def __init__(self):
         self.terminal = sys.stdout
