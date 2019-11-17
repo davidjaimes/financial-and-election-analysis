@@ -1,7 +1,10 @@
 import pandas as pd
 import numpy as np
 
-# Total Months
+print('Financial Analysis')
+print('-' * 30)
+# Find Total Number of Unique Months.
+# This code will omit any repeated months of the same year.
 df = pd.read_csv('budget_data.csv', parse_dates=[0])
 dates = pd.DatetimeIndex(df['Date'])
 unique_months = np.unique(dates.year + dates.month / 12)
