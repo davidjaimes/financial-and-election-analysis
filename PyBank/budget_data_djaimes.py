@@ -4,6 +4,8 @@
 # Web: https://djaimes.com
 # Due Date: 2019 December 02
 # UCSD Extension: Data Science and Visualization Boot Camp
+# Conda Version: 4.7.12
+# Python Version: 3.7.4
 
 import pandas as pd
 import numpy as np
@@ -21,6 +23,10 @@ print(f'Total Months: {len(unique_months)}')
 # Find the Net Total of "Profit/Losses" Column.
 net_total = np.sum(df['Profit/Losses'])
 print(f'Total: ${net_total}')
+
+# Find the Average of the Changes in "Profit/Losses" Column.
+average_change = np.mean(np.diff(df['Profit/Losses']))
+print(f'Average Change: ${round(average_change, 2)}')
 
 '''
 average_change = np.mean(df['Profit/Losses'])
