@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 
 print('Financial Analysis')
-print('-' * 30)
+print('-' * 28)
 
 # Find Total Number of Unique Months.
 # This code will omit any repeated months of the same year.
@@ -36,6 +36,7 @@ print(f'Average Change: ${round(average_change, 2)}')
 txt_max = 'Greatest Increase in Profits: '
 txt_min = 'Greatest Decrease in Losses: '
 for x, y, z in [[np.argmax, np.max, txt_max], [np.argmin, np.min, txt_min]]:
-    great_date = df['Date'][x(np.array(df['Profit/Losses']))].strftime('%b-%Y')
+    index = x(np.array(df['Profit/Losses']))
+    great_date = df['Date'][index].strftime('%b-%Y')
     great_money = y(df['Profit/Losses'])
     print(z + f'{great_date} (${great_money})')
