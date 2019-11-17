@@ -31,14 +31,11 @@ sorted_df = df.sort_values(by='Date')
 average_change = np.mean(np.diff(sorted_df['Profit/Losses']))
 print(f'Average Change: ${round(average_change, 2)}')
 
-# Find the Greatest Increase in Profits (Date and Amount).
-gr8_increase_date = df['Date'][np.argmax(np.array(df['Profit/Losses']))]
-gr8_increase_date = gr8_increase_date.strftime('%b-%Y')
-gr8_increase = np.max(df['Profit/Losses'])
-print(f'Greatest Increase in Profits: {gr8_increase_date} (${gr8_increase})')
-
-# Find the Greatest Decrease in Losses (Date and Amount).
-gr8_decrease_date = df['Date'][np.argmin(np.array(df['Profit/Losses']))]
-gr8_decrease_date = gr8_decrease_date.strftime('%b-%Y')
-gr8_decrease = np.min(df['Profit/Losses'])
-print(f'Greatest Decrease in Losses: {gr8_decrease_date} (${gr8_decrease})')
+# Find the Greatest Increase in Profits (Date and Amount) and Find the Greatest
+# Decrease in Losses (Date and Amount).
+txt_max = 'Greatest Increase in Profits: '
+txt_min = 'Greatest Decrease in Losses: '
+for x, y, z in [[np.argmax, np.max, txt_max], [np.argmin, np.min, txt_min]]:
+    great_date = df['Date'][x(np.array(df['Profit/Losses']))].strftime('%b-%Y')
+    great_money = y(df['Profit/Losses'])
+    print(z + f'{great_date} (${great_money})')
