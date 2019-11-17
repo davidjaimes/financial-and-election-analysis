@@ -25,7 +25,10 @@ net_total = np.sum(df['Profit/Losses'])
 print(f'Total: ${net_total}')
 
 # Find the Average of the Changes in "Profit/Losses" Column.
-average_change = np.mean(np.diff(df['Profit/Losses']))
+# For chronological accuracy, I'll sort by "Date" before finding difference
+# between adjacent elements.
+sorted_df = df.sort_values(by='Date')
+average_change = np.mean(np.diff(sorted_df['Profit/Losses']))
 print(f'Average Change: ${round(average_change, 2)}')
 
 '''
