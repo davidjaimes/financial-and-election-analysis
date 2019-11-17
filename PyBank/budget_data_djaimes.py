@@ -9,6 +9,21 @@
 
 import pandas as pd
 import numpy as np
+import sys
+
+# Make class to make all Print function write to console and text file.
+class Logger(object):
+    def __init__(self):
+        self.terminal = sys.stdout
+        self.log = open('budget_data_djaimes.txt', 'w')
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        pass
+sys.stdout = Logger()
 
 print('Financial Analysis')
 print('-' * 28)
