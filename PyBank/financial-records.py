@@ -11,20 +11,6 @@ import csv
 import numpy as np
 import sys
 
-# make class to write print pfunctions to console and text file.
-class Logger(object):
-    def __init__(self):
-        self.terminal = sys.stdout
-        self.log = open('financial_analysis.txt', 'w')
-
-    def write(self, message):
-        self.terminal.write(message)
-        self.log.write(message)
-
-    def flush(self):
-        pass
-sys.stdout = Logger()
-
 with open('budget_data.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     header = next(reader)
