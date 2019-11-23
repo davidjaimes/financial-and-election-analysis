@@ -7,18 +7,16 @@
 # Conda Version: 4.7.12
 # Python Version: 3.7.4
 
-import csv
+from csv import reader as csvreader
 import numpy as np
-import sys
 
 with open('budget_data.csv', newline='') as csvfile:
-    reader = csv.reader(csvfile, delimiter=',')
+    reader = csvreader(csvfile, delimiter=',')
     header = next(reader)
 
     # set 1st column as string and 2nd column as integer.
-    dt = np.dtype([(header[0], 'U25'), (header[1], 'i4')])
-    data = np.array([(row[0], row[1]) for row in reader], dtype=dt)
-    dates, pl = data[header[0]], data[header[1]]
+    data = np.array([tuple(row) for row in reader], dtype=('U25, i4'))
+    dates, pl = data['f0'], data['f1']
 
     # compute areas of interest for financial analysis.
     total_months= len(np.unique(dates))
