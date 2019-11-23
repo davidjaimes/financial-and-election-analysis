@@ -1,3 +1,12 @@
+# Title: Python challange
+# Author: David Jaimes
+# Email: david@djaimes.com
+# Web: https://djaimes.com
+# Due Date: 2019 December 02
+# UCSD Extension: Data Science and Visualization Boot Camp
+# Conda Version: 4.7.12
+# Python Version: 3.7.4
+
 import csv
 import numpy as np
 import sys
