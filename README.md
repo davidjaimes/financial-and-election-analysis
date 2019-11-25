@@ -21,7 +21,6 @@ Sep-2010,-216386
 ### Financial Analysis
 
 Total Months | 86
---- | ---
 Total | $38,382,578.00
 Average Change | -$2315.12
 Greatest Increase in Profits | Feb-2012 ($1,170,593.00)
