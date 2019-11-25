@@ -18,14 +18,6 @@ Aug-2010,604885
 Sep-2010,-216386
 ```
 
-### Financial Analysis
-
-The Python script analyzes the votes and calculates each of the following:
-  - The total number of votes cast
-  - A complete list of candidates who received votes
-  - The percentage of votes each candidate won
-  - The total number of votes each candidate won
-  - The winner of the election based on popular vote.
 
 Description | Value
 --- | --- 
@@ -36,7 +28,6 @@ Greatest Increase in Profits | Feb-2012 ($1,170,593.00)
 Greatest Decrease in Profits | Sep-2013 (-$1,196,225.00)
 
 ### Election Records
-
 
 First few lines of the CSV file:
 ```
@@ -52,7 +43,13 @@ Voter ID,County,Candidate
 14255761,Marsh,Khan
 ```
 
-### Election Results
+
+The Python script analyzes the votes and calculates each of the following:
+  - The total number of votes cast
+  - A complete list of candidates who received votes
+  - The percentage of votes each candidate won
+  - The total number of votes each candidate won
+  - The winner of the election based on popular vote.
 
 Candidate | Votes
 --- | ---
