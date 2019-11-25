@@ -20,6 +20,8 @@ Sep-2010,-216386
 
 ### Financial Analysis
 
+Description | Value
+--- | --- 
 Total Months | 86
 Total | $38,382,578.00
 Average Change | -$2315.12
