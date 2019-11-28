@@ -23,14 +23,20 @@ with open('election_data.csv', newline='') as csvfile:
     unique, counts = np.unique(candidate, return_counts=True)
     ind_sort = np.argsort(counts)[::-1]
 
-    # print election results to console.
-    print('Election Results')
-    print('-' * 28)
-    print(f'Total Votes: {total_votes}')
-    print('-' * 28)
+    # custom function to print to screen and file.
+    def cprint(text):
+        print(text)
+        with open('election_results.txt', 'a') as fname:
+            print(text, file=fname)
+
+    # print election results to console and file with cprint custom function.
+    cprint('Election Results')
+    cprint('-' * 28)
+    cprint(f'Total Votes: {total_votes}')
+    cprint('-' * 28)
     for ind in ind_sort:
         percent = round(100 * counts[ind] / total_votes, 3)
-        print(f'{unique[ind]}: {percent}% ({counts[ind]})')
-    print('-' * 28)
-    print(f'Winner: {unique[ind_sort][0]}')
-    print('-' * 28)
+        cprint(f'{unique[ind]}: {percent}% ({counts[ind]})')
+    cprint('-' * 28)
+    cprint(f'Winner: {unique[ind_sort][0]}')
+    cprint('-' * 28)
