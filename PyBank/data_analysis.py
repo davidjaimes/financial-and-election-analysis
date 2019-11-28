@@ -23,11 +23,18 @@ with open('budget_data.csv', newline='') as csvfile:
     net_total = np.sum(pl)
     average_change = np.mean(np.diff(pl))
 
-    # print financial analysis to console.
-    print('Financial Analysis')
-    print('-' * 28)
-    print(f'Total Months: {total_months}')
-    print(f'Total: ${net_total}')
-    print(f'Average Change: ${round(average_change, 2)}')
-    for x, y in zip([np.argmax(pl), np.argmin(pl)], ['Increase', 'Decrease']):
-        print(f'Greatest {y} in Profits: {dates[x]} (${pl[x]})')
+    # custom function to print to screen and file.
+    def cprint(text):
+        print(text)
+        with open('financial_summary.txt', 'a') as fname:
+            print(text, file=fname)
+
+    # print financial analysis to console and file with cprint custom function.
+    cprint('Financial Analysis')
+    cprint('-' * 28)
+    cprint(f'Total Months: {total_months}')
+    cprint(f'Total: ${net_total}')
+    cprint(f'Average Change: ${round(average_change, 2)}')
+    args = zip([np.argmax(pl), np.argmin(pl)], ['Increase', 'Decrease'])
+    for x, y in args:
+        cprint(f'Greatest {y} in Profits: {dates[x]} (${pl[x]})')
